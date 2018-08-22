@@ -8,6 +8,12 @@
 
 import UIKit
 
+/*
+IMPORANT
+This picker assumes colour ranges are always between 0-1 (0-255).
+It does not support values outside of this range and will cause a crash if forbidden values are used.
+*/
+
 class SimpleColourViewController: UIViewController {
 	
 	@IBOutlet var RGB : BevelButton!
@@ -78,7 +84,11 @@ class SimpleColourViewController: UIViewController {
 	//--------------------------------------
 	// MARK:-
 	
+	// Converting from one colour space to another.
+	// Need to hide/show correct sliders and set their values so the actual colour doesn't change.
+	// For gray scale, the colour is either the average of R+G+B or black for CMYK.
 	private func colourSpacedChange() {
+		// This function is called before the view is loaded. Prevents a crash.
 		if redCyanSlider == nil {return}
 		switch colourMode {
 			case .RGB:
@@ -106,8 +116,6 @@ class SimpleColourViewController: UIViewController {
 					greenMagenta = black
 					blueYellow = black
 				}
-//				blackSlider.tintColor = .black
-//				blackSlider.thumbTintColor = .black
 			
 			case .CMYK:
 				redCyanSlider.isHidden = false
@@ -144,12 +152,6 @@ class SimpleColourViewController: UIViewController {
 				blueYellowSlider.isHidden = true
 				blackSlider.isHidden = false
 			
-//				redSlider.tintColor = .lightGray
-//				redSlider.thumbTintColor = .lightGray
-//				greenSlider.tintColor = .lightGray
-//				greenSlider.thumbTintColor = .lightGray
-//				blueSlider.tintColor = .lightGray
-//				blueSlider.thumbTintColor = .lightGray
 				blackSlider.tintColor = .darkGray
 				blackSlider.thumbTintColor = .darkGray
 			
@@ -164,25 +166,27 @@ class SimpleColourViewController: UIViewController {
 		}
 		syncSliders()
 		colourBox.backgroundColor = colour
+		WriteColourBlab()
 	}
 	
+	// SCPicker colours spaces (modes) avaiable.
 	enum SCPColourSpace {
 		case RGB
 		case CMYK
 		case gray
 	}
 	
+	// Used by colourSpacedChange()
 	private var oldSpace : SCPColourSpace = .RGB
+	
 	/// Current colour select mode. Important: colour below returns CMYK in RGB color space.
 	private(set) var colourMode : SCPColourSpace = .RGB {
 		willSet { oldSpace = colourMode }
-		didSet {
-			colourSpacedChange()
-		}
+		didSet { colourSpacedChange() }
 	}
 	
 	// MARK:-
-	/// Callback whenever the slider changes.
+	/// Callback whenever the sliders (colour) changes.
 	typealias ColourChangeProc = (UIColor, SCPColourSpace) -> Void
 	
 	/// Listener closure callback
@@ -191,6 +195,7 @@ class SimpleColourViewController: UIViewController {
 	//-----------------------------------------------------
 	// MARK:-
 	
+	/// RGB to CMYK. Cannot fail.
 	static func RGBToCMYK(red : CGFloat, green : CGFloat, blue : CGFloat) -> (C:CGFloat, M:CGFloat, Y: CGFloat, B: CGFloat) {
 		let black = 1 - max(red, green, blue)
 		let cyan = (1 - red - black) / (1 - black)
@@ -251,7 +256,7 @@ class SimpleColourViewController: UIViewController {
 	}
 	
 	/// Set colour using an UIColor with RGB colour space. If it is not, an exception will be raised.
-	/// This will also convert the colour space mode to RGB.
+	/// This will also change the colour space mode to RGB.
 	func setColour(RGB: UIColor) {
 		redCyan = UInt8(RGB.redComponent! * 255)
 		greenMagenta = UInt8(RGB.greenComponent! * 255)
@@ -260,20 +265,21 @@ class SimpleColourViewController: UIViewController {
 	}
 	
 	/// Set colour using an UIColor with gray(white) colour space. If it is not, an exception will be raised.
-	/// This will also convert the colour space mode to gray.
+	/// This will also change the colour space mode to gray.
 	func setColour(gray: UIColor) {
 		black = UInt8(gray.greenComponent! * 255)
 		colourMode = .gray
 	}
 	
 	/// Set colour 0 to 1 gray scale. If the value is outside of this range, nothing wil happen.
-	/// This will also convert the colour space mode to gray.
+	/// This will also change the colour space mode to gray.
 	func setColour(grayScale : CGFloat) {
 		if grayScale < 0 || grayScale > 1 {return}
 		black = UInt8(grayScale * 255)
 		colourMode = .gray
 	}
 	
+	// Match sliders to current values
 	private func syncSliders() {
 		redCyanSlider.value = Float(redCyan)
 		greenMagentaSlider.value = Float(greenMagenta)
@@ -284,12 +290,7 @@ class SimpleColourViewController: UIViewController {
 	//--------------------------------------------------------
 	// MARK:-
 	
-	@IBAction func colourSlider(_ sender : UISlider) {
-		redCyan = UInt8(redCyanSlider.value)
-		greenMagenta = UInt8(greenMagentaSlider.value)
-		blueYellow = UInt8(blueYellowSlider.value)
-		black = UInt8(blackSlider.value)
-		
+	private func WriteColourBlab() {
 		switch colourMode {
 			case .RGB:
 				colourBlab.text = "R\(redCyan), G\(greenMagenta), B\(blueYellow)"
@@ -298,6 +299,15 @@ class SimpleColourViewController: UIViewController {
 			case .gray:
 				colourBlab.text = "Gray \(black)"
 		}
+	}
+	
+	@IBAction func colourSlider(_ sender : UISlider) {
+		redCyan = UInt8(redCyanSlider.value)
+		greenMagenta = UInt8(greenMagentaSlider.value)
+		blueYellow = UInt8(blueYellowSlider.value)
+		black = UInt8(blackSlider.value)
+		
+		WriteColourBlab()
 		
 		colourBox.backgroundColor = colour
 		if colourChanged != nil {
@@ -306,10 +316,9 @@ class SimpleColourViewController: UIViewController {
 		
 	} // colourSlider()
 	
+	// Needed for iPhone sized screens
 	@IBAction func closeBtn(_ sender : UIButton) {
-		self.dismiss(animated: true) {
-			
-		}
+		self.dismiss(animated: true) { }
 	}
 	
     /*
@@ -328,6 +337,7 @@ class SimpleColourViewController: UIViewController {
 // MARK:-
 
 /// Some NSColor methods & properties implemented for iOS.
+/// There are differences
 extension UIColor {
 	/// This is a UIColor implementation of an NSColor method.
 	func ConverTo(colourSpace : CGColorSpace) -> UIColor? {
@@ -373,7 +383,7 @@ extension UIColor {
 	}
 	
 	/// Returns gray scale value if possible otherwise nil
-	var gray : CGFloat? {
+	var grayScale : CGFloat? {
 		var G : CGFloat = 0
 		if !getWhite(&G, alpha: nil) {return nil}
 		return G
