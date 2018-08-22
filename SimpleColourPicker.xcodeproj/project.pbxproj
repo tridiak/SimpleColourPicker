@@ -8,16 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		921C9FAB212CC44B00F59D6E /* SimpleColourPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 921C9FA9212CC44B00F59D6E /* SimpleColourPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		921C9FB3212CC4C700F59D6E /* SimpleColourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9FB1212CC4C700F59D6E /* SimpleColourViewController.swift */; };
+		921C9FB4212CC4C700F59D6E /* SimpleColourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921C9FB2212CC4C700F59D6E /* SimpleColourViewController.xib */; };
+		921C9FB6212CC6E900F59D6E /* BevelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9FB5212CC6E900F59D6E /* BevelButton.swift */; };
+		921C9FBE212CC9BC00F59D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9FBD212CC9BC00F59D6E /* AppDelegate.swift */; };
+		921C9FC0212CC9BC00F59D6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9FBF212CC9BC00F59D6E /* ViewController.swift */; };
+		921C9FC3212CC9BC00F59D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921C9FC1212CC9BC00F59D6E /* Main.storyboard */; };
+		921C9FC5212CC9BD00F59D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921C9FC4212CC9BD00F59D6E /* Assets.xcassets */; };
+		921C9FC8212CC9BD00F59D6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921C9FC6212CC9BD00F59D6E /* LaunchScreen.storyboard */; };
+		921C9FCD212CCA5000F59D6E /* SimpleColourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9FB1212CC4C700F59D6E /* SimpleColourViewController.swift */; };
+		921C9FCE212CCA5B00F59D6E /* SimpleColourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921C9FB2212CC4C700F59D6E /* SimpleColourViewController.xib */; };
+		921C9FCF212CCA6800F59D6E /* BevelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C9FB5212CC6E900F59D6E /* BevelButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		921C9FA6212CC44B00F59D6E /* SimpleColourPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleColourPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		921C9FA9212CC44B00F59D6E /* SimpleColourPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleColourPicker.h; sourceTree = "<group>"; };
 		921C9FAA212CC44B00F59D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		921C9FB1212CC4C700F59D6E /* SimpleColourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleColourViewController.swift; sourceTree = "<group>"; };
+		921C9FB2212CC4C700F59D6E /* SimpleColourViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleColourViewController.xib; sourceTree = "<group>"; };
+		921C9FB5212CC6E900F59D6E /* BevelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BevelButton.swift; sourceTree = "<group>"; };
+		921C9FBB212CC9BC00F59D6E /* SCPSameple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPSameple.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		921C9FBD212CC9BC00F59D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		921C9FBF212CC9BC00F59D6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		921C9FC2212CC9BC00F59D6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		921C9FC4212CC9BD00F59D6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		921C9FC7212CC9BD00F59D6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		921C9FC9212CC9BD00F59D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		921C9FA2212CC44B00F59D6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		921C9FB8212CC9BC00F59D6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				921C9FA8212CC44B00F59D6E /* SimpleColourPicker */,
+				921C9FBC212CC9BC00F59D6E /* SCPSameple */,
 				921C9FA7212CC44B00F59D6E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				921C9FA6212CC44B00F59D6E /* SimpleColourPicker.framework */,
+				921C9FBB212CC9BC00F59D6E /* SCPSameple.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,8 +78,24 @@
 			children = (
 				921C9FA9212CC44B00F59D6E /* SimpleColourPicker.h */,
 				921C9FAA212CC44B00F59D6E /* Info.plist */,
+				921C9FB1212CC4C700F59D6E /* SimpleColourViewController.swift */,
+				921C9FB2212CC4C700F59D6E /* SimpleColourViewController.xib */,
+				921C9FB5212CC6E900F59D6E /* BevelButton.swift */,
 			);
 			path = SimpleColourPicker;
+			sourceTree = "<group>";
+		};
+		921C9FBC212CC9BC00F59D6E /* SCPSameple */ = {
+			isa = PBXGroup;
+			children = (
+				921C9FBD212CC9BC00F59D6E /* AppDelegate.swift */,
+				921C9FBF212CC9BC00F59D6E /* ViewController.swift */,
+				921C9FC1212CC9BC00F59D6E /* Main.storyboard */,
+				921C9FC4212CC9BD00F59D6E /* Assets.xcassets */,
+				921C9FC6212CC9BD00F59D6E /* LaunchScreen.storyboard */,
+				921C9FC9212CC9BD00F59D6E /* Info.plist */,
+			);
+			path = SCPSameple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +130,38 @@
 			productReference = 921C9FA6212CC44B00F59D6E /* SimpleColourPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		921C9FBA212CC9BC00F59D6E /* SCPSameple */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 921C9FCA212CC9BD00F59D6E /* Build configuration list for PBXNativeTarget "SCPSameple" */;
+			buildPhases = (
+				921C9FB7212CC9BC00F59D6E /* Sources */,
+				921C9FB8212CC9BC00F59D6E /* Frameworks */,
+				921C9FB9212CC9BC00F59D6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SCPSameple;
+			productName = SCPSameple;
+			productReference = 921C9FBB212CC9BC00F59D6E /* SCPSameple.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		921C9F9D212CC44B00F59D6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = tridiak;
 				TargetAttributes = {
 					921C9FA5212CC44B00F59D6E = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					921C9FBA212CC9BC00F59D6E = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -104,6 +172,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 921C9F9C212CC44B00F59D6E;
 			productRefGroup = 921C9FA7212CC44B00F59D6E /* Products */;
@@ -111,6 +180,7 @@
 			projectRoot = "";
 			targets = (
 				921C9FA5212CC44B00F59D6E /* SimpleColourPicker */,
+				921C9FBA212CC9BC00F59D6E /* SCPSameple */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +190,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921C9FB4212CC4C700F59D6E /* SimpleColourViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		921C9FB9212CC9BC00F59D6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				921C9FCE212CCA5B00F59D6E /* SimpleColourViewController.xib in Resources */,
+				921C9FC8212CC9BD00F59D6E /* LaunchScreen.storyboard in Resources */,
+				921C9FC5212CC9BD00F59D6E /* Assets.xcassets in Resources */,
+				921C9FC3212CC9BC00F59D6E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,10 +212,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921C9FB6212CC6E900F59D6E /* BevelButton.swift in Sources */,
+				921C9FB3212CC4C700F59D6E /* SimpleColourViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		921C9FB7212CC9BC00F59D6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				921C9FC0212CC9BC00F59D6E /* ViewController.swift in Sources */,
+				921C9FBE212CC9BC00F59D6E /* AppDelegate.swift in Sources */,
+				921C9FCF212CCA6800F59D6E /* BevelButton.swift in Sources */,
+				921C9FCD212CCA5000F59D6E /* SimpleColourViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		921C9FC1212CC9BC00F59D6E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				921C9FC2212CC9BC00F59D6E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		921C9FC6212CC9BD00F59D6E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				921C9FC7212CC9BD00F59D6E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		921C9FAC212CC44B00F59D6E /* Debug */ = {
@@ -259,6 +373,7 @@
 		921C9FAF212CC44B00F59D6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -276,6 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nz.alphaco.SimpleColourPicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +400,7 @@
 		921C9FB0212CC44B00F59D6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -306,6 +423,42 @@
 			};
 			name = Release;
 		};
+		921C9FCB212CC9BD00F59D6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7N28673KX9;
+				INFOPLIST_FILE = SCPSameple/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nz.alphaco.SCPSameple;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		921C9FCC212CC9BD00F59D6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7N28673KX9;
+				INFOPLIST_FILE = SCPSameple/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nz.alphaco.SCPSameple;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +476,15 @@
 			buildConfigurations = (
 				921C9FAF212CC44B00F59D6E /* Debug */,
 				921C9FB0212CC44B00F59D6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		921C9FCA212CC9BD00F59D6E /* Build configuration list for PBXNativeTarget "SCPSameple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				921C9FCB212CC9BD00F59D6E /* Debug */,
+				921C9FCC212CC9BD00F59D6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
